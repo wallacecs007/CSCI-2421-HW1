@@ -1,6 +1,8 @@
 #ifndef GUESS_H
 #define GUESS_H
 #include <stdlib.h>
+#include <vector>
+
 /*
 
 Creating the class of guess which will hold the vectors for the random numbers
