@@ -38,7 +38,7 @@ int main()
 
 	//Create some of the beginning variables used to run the user entry
 	//and for the menu navigation
-	int menuSelect, maxNum, totalNum;
+	int menuSelect; // , maxNum, totalNum;
 	vector<int> randomNumbs;
 	vector<int> found;
 
@@ -61,6 +61,9 @@ int main()
 			//for use in creating a random vector of numbers, guessing those numbers,
 			//and checking to see if those numbers are correct and if so how many of
 			//them are correct.
+
+			
+
 			break;
 		case 2:
 			//This case is simple enough, just return 0 to exit the game

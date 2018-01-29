@@ -26,17 +26,18 @@ private:
 	//and the vector of numbers found
 	vector<int> randomVector;
 	vector<int> foundVector;
+	int maxNum;
 
 public:
 
 	Guess();
-	Guess(vector<int> _randomVector, vector<int> _foundVector);
+	Guess(vector<int> _randomVector, vector<int> _foundVector, int _maxNum);
 
 	//Functions used to run and manage the game creating the random numbers
 	//reading the users guesses, and then comparing the two to check if they
 	//are identical in the variables they carry.
 
-	void startGuess(vector<int> randomVector, vector<int> foundVector);
+	void startGuess(vector<int> randomVector, vector<int> foundVector, int maxNum);
 	void createRandomNumber(vector<int> randomVector);
 
 	//Decided to create the compare inside the startGuess function instead of
@@ -50,6 +51,9 @@ public:
 	void setRandomVector(vector<int> _randomVector) { randomVector = _randomVector; }
 	vector<int> getFoundVector() { return foundVector; }
 	void setFoundVector(vector<int> _foundVector) { foundVector = _foundVector; }
+	int getMaxNum() { return maxNum; }
+	void setMaxNum(int _maxNum) { maxNum = _maxNum; }
+
 	//friend ostream& operator << (ostream& out, Guess _guess);
 
 };

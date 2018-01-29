@@ -1,10 +1,6 @@
-﻿  wallaceChaseHW1.cpp
-c:\users\walla\desktop\clean\springs 2018\2421 - data structures\wallacehw1\wallacechasehw1\wallacechasehw1\wallacechasehw1.cpp(41): warning C4101: 'maxNum': unreferenced local variable
-c:\users\walla\desktop\clean\springs 2018\2421 - data structures\wallacehw1\wallacechasehw1\wallacechasehw1\wallacechasehw1.cpp(41): warning C4101: 'totalNum': unreferenced local variable
+﻿  Guess.cpp
   Generating Code...
-  Compiling...
-  Guess.cpp
-c:\users\walla\desktop\clean\springs 2018\2421 - data structures\wallacehw1\wallacechasehw1\wallacechasehw1\guess.cpp(109): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
+  Skipping... (no relevant changes detected)
+  wallaceChaseHW1.cpp
   wallaceChaseHW1.vcxproj -> C:\Users\walla\Desktop\Clean\Springs 2018\2421 - Data Structures\wallaceHW1\wallaceChaseHW1\Debug\wallaceChaseHW1.exe
   wallaceChaseHW1.vcxproj -> C:\Users\walla\Desktop\Clean\Springs 2018\2421 - Data Structures\wallaceHW1\wallaceChaseHW1\Debug\wallaceChaseHW1.pdb (Partial PDB)

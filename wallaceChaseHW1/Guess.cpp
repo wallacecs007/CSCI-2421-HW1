@@ -15,15 +15,15 @@ Guess::Guess()
 }
 
 //Creating the customized constructor class for the guess class
-Guess::Guess(vector<int> _randomVector, vector<int> _foundVector)
+Guess::Guess(vector<int> _randomVector, vector<int> _foundVector, int _maxNum)
 {
 
 	randomVector = _randomVector;
 	foundVector = _foundVector;
 
 }
-
-void Guess::startGuess(vector<int> randomVector, vector<int> foundVector)
+//I NEED TO ADD A MAX NUMBER INPUT HERE
+void Guess::startGuess(vector<int> randomVector, vector<int> foundVector, int maxNum)
 {
 
 	//Creating a temporary vector to hold a copy of the random vector for comparison.
@@ -46,9 +46,37 @@ void Guess::startGuess(vector<int> randomVector, vector<int> foundVector)
 		for (int i = 0; i = tempVector.size(); i++)
 		{
 
-			cout << "Enter number greater than zero to guess and less than the max. #" << i + 1 << ": " << endl;
-			cin >> userEnter;
-			guessVector.push_back(userEnter);
+			//Creating a while loop with an if statement to check and make sure the user enters a number between 1 and the max.
+			//If not it revokes the number and makes them renter it.
+
+			bool correctMax = true;
+
+			//This do while loop makes sure the user inputs a number that is appropriate for the ranges given.
+			//Needs to be greater than 0 and less than the max.
+			do
+			{
+
+				cout << "Enter number greater than zero to guess and less than the max number:" << i + 1 << ": " << endl;
+				cin >> userEnter;
+
+				//Heres the if statement to check the users numbers.
+
+				if (userEnter >= 1 && userEnter <= maxNum)
+				{
+
+					guessVector.push_back(userEnter);
+
+					correctMax = false;
+
+				}
+				else
+				{
+
+					cout << "Your number was not within the proper range. Try again!" << endl << endl;
+
+				}
+
+			} while (correctMax);
 
 		}
 
@@ -106,7 +134,7 @@ void Guess::createRandomNumber(vector<int> randomVector)
 
 	cin >> maxNum;
 
-	srand(time(NULL));
+	srand( (unsigned int)time(NULL) );
 
 	for (int i = 0; i < arraySize; i++)
 	{
