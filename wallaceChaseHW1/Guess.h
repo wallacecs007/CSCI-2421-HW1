@@ -37,8 +37,8 @@ public:
 	//reading the users guesses, and then comparing the two to check if they
 	//are identical in the variables they carry.
 
-	void startGuess(vector<int> randomVector, vector<int> foundVector, int maxNum);
-	void createRandomNumber(vector<int> randomVector);
+	void startGuess(Guess myGuess);
+	void createRandomNumber(Guess myGuess);
 
 	//Decided to create the compare inside the startGuess function instead of
 	//Seperately

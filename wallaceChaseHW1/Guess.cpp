@@ -20,23 +20,25 @@ Guess::Guess(vector<int> _randomVector, vector<int> _foundVector, int _maxNum)
 
 	randomVector = _randomVector;
 	foundVector = _foundVector;
+	maxNum = _maxNum;
 
 }
 //I NEED TO ADD A MAX NUMBER INPUT HERE
-void Guess::startGuess(vector<int> randomVector, vector<int> foundVector, int maxNum)
+void Guess::startGuess(Guess myGuess)
 {
 
 	//Creating a temporary vector to hold a copy of the random vector for comparison.
 	//Also creating a vectory to hold the user's guess.
 	vector<int> tempVector;
 	vector<int> guessVector;
-	int userEnter;
+	vector<int> foundVector;
+	int userEnter, maxNum = myGuess.getMaxNum();
 
 	//Using this boolean to check if the user has guessed the correct number And
 	//then break the loop or if the user hits the 3 guesses they recieve.
 	bool breaker = true;
 
-	tempVector = randomVector;
+	tempVector = myGuess.getRandomVector();
 
 	do
 	{
@@ -64,6 +66,7 @@ void Guess::startGuess(vector<int> randomVector, vector<int> foundVector, int ma
 				if (userEnter >= 1 && userEnter <= maxNum)
 				{
 
+					//Pushing the users guess to the guessVector
 					guessVector.push_back(userEnter);
 
 					correctMax = false;
@@ -101,7 +104,7 @@ void Guess::startGuess(vector<int> randomVector, vector<int> foundVector, int ma
 				if (tempVector[i] == guessVector[j])
 				{
 
-					foundVector.push_back(i);
+					foundVector.push_back(guessVector[j]);
 
 					tempVector[i] = 0;
 					guessVector[j] = 0;
@@ -117,11 +120,9 @@ void Guess::startGuess(vector<int> randomVector, vector<int> foundVector, int ma
 
 	} while (breaker == true);
 
-
-
 }
 
-void Guess::createRandomNumber(vector<int> randomVector)
+void Guess::createRandomNumber(Guess myGuess)
 {
 
 	int maxNum, arraySize, tempNum;
@@ -134,6 +135,8 @@ void Guess::createRandomNumber(vector<int> randomVector)
 
 	cin >> maxNum;
 
+	myGuess.setMaxNum(maxNum);
+
 	srand( (unsigned int)time(NULL) );
 
 	for (int i = 0; i < arraySize; i++)
@@ -144,5 +147,7 @@ void Guess::createRandomNumber(vector<int> randomVector)
 		randomVector.push_back(tempNum);
 
 	}
+
+	myGuess.setRandomVector(randomVector);
 
 }

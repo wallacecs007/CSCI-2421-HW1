@@ -20,7 +20,10 @@ Status: Not compiled on CSE-Grid
 #include <iostream>
 #include <time.h>
 #include "Guess.h"
+#include "Guess.cpp"
 #include <vector>
+
+void createRandomNumber(Guess myGuess);
 
 //Identifying the namespace that will be used.
 using namespace std;
@@ -39,11 +42,13 @@ int main()
 	//Create some of the beginning variables used to run the user entry
 	//and for the menu navigation
 	int menuSelect; // , maxNum, totalNum;
-	vector<int> randomNumbs;
+	vector<int> randomNums;
 	vector<int> found;
 
 	do
 	{
+
+		Guess newGuess;
 
 		//Printing out the menu and the options to the user.
 		cout << "Choose one of the options below:" << endl;
@@ -62,7 +67,14 @@ int main()
 			//and checking to see if those numbers are correct and if so how many of
 			//them are correct.
 
-			
+			createRandomNumber(newGuess);
+
+			for (int i = 0; i < newGuess.getRandomVector().size(); i++)
+			{
+
+
+
+			}
 
 			break;
 		case 2:
